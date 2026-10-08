@@ -1,0 +1,204 @@
+:root{
+  --cream: #FBEEDD;
+  --cream-deep: #F4E2C7;
+  --ink: #3B2314;
+  --ink-soft: #6B4A34;
+  --pumpkin: #C4632B;
+  --pumpkin-deep: #A34E20;
+  --gold: #D9A441;
+  --wine: #6E2A38;
+  --sage: #7C8B5D;
+  --paper: #FFF9F0;
+}
+
+*{ box-sizing: border-box; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  margin:0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Karla', sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection{ background: var(--gold); color: var(--ink); }
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation: none !important; transition: none !important; }
+}
+
+.wrap{
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+a{ color: inherit; }
+
+a:focus-visible, button:focus-visible{
+  outline: 2px solid var(--wine);
+  outline-offset: 3px;
+}
+
+/* ---------- HEADER (igual al de las páginas de receta) ---------- */
+
+.site-header--recipe{
+  padding: 46px 28px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.site-header--recipe .logo{
+  width: 96px;
+  margin: 0;
+}
+
+.site-nav{
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px dashed rgba(59,35,20,0.3);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+}
+
+.site-nav a{
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.site-nav a:hover{
+  color: var(--pumpkin-deep);
+  border-color: var(--pumpkin-deep);
+}
+
+/* ---------- CONTACT INTRO ---------- */
+
+main{ padding: 64px 0 70px; }
+
+.contact-intro{
+  text-align: center;
+}
+
+.contact-intro .num{
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--pumpkin-deep);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.contact-intro h1{
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: clamp(2.2rem, 5vw, 2.8rem);
+  margin: 0 0 12px;
+}
+
+.contact-intro .tagline{
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.contact-divider{
+  border: none;
+  border-top: 1px dashed rgba(59,35,20,0.3);
+  margin: 46px 0 50px;
+}
+
+/* ---------- CONTACT GRID ---------- */
+
+.contact-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  align-items: start;
+  text-align: center;
+}
+
+.contact-item svg{
+  width: 44px;
+  height: 44px;
+  color: var(--pumpkin);
+  margin: 0 auto 18px;
+  display: block;
+}
+
+.contact-item h3{
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+
+.contact-item p{
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.contact-item p a{
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 160ms ease;
+}
+
+.contact-item p a:hover{
+  border-color: var(--ink-soft);
+}
+
+.contact-item--brand{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-logo{
+  width: 90px;
+  height: auto;
+}
+
+@media (max-width: 700px){
+  .contact-grid{
+    grid-template-columns: 1fr 1fr;
+    row-gap: 44px;
+  }
+}
+
+@media (max-width: 420px){
+  .contact-grid{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- FOOTER ---------- */
+
+footer{
+  text-align: center;
+  padding: 40px 28px 70px;
+  color: var(--ink-soft);
+}
+
+footer .stamp{
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--wine);
+}
